@@ -63,7 +63,7 @@
 	page,
 	.content {
 		height: 100%;
-		background-color: #f8f8f8;
+		background-color: #f5f7fa;
 	}
 
 	.content {
@@ -75,6 +75,7 @@
 		width: 200upx;
 		height: 100%;
 		background-color: #fff;
+		box-shadow: 2upx 0 12upx rgba(99, 102, 241, 0.06);
 	}
 
 	.f-item {
@@ -86,10 +87,12 @@
 		font-size: 28upx;
 		color: $font-color-base;
 		position: relative;
+		transition: all 0.3s ease;
 
 		&.active {
 			color: $base-color;
-			background: #f8f8f8;
+			background: linear-gradient(90deg, rgba(99, 102, 241, 0.08) 0%, rgba(99, 102, 241, 0.02) 100%);
+			font-weight: 600;
 
 			&:before {
 				content: '';
@@ -97,11 +100,11 @@
 				left: 0;
 				top: 50%;
 				transform: translateY(-50%);
-				height: 36upx;
+				height: 40upx;
 				width: 8upx;
-				background-color: $base-color;
-				border-radius: 0 4px 4px 0;
-				opacity: .8;
+				background: linear-gradient(180deg, #6366f1 0%, #8b5cf6 100%);
+				border-radius: 0 8upx 8upx 0;
+				opacity: 1;
 			}
 		}
 	}
@@ -119,6 +122,8 @@
 		width: 100%;
 		background: #fff;
 		padding-top: 12upx;
+		border-radius: 20upx 0 0 0;
+		box-shadow: 0 2upx 12upx rgba(99, 102, 241, 0.06);
 
 		&:after {
 			content: '';
@@ -137,10 +142,13 @@
 		font-size: 26upx;
 		color: #666;
 		padding-bottom: 20upx;
+		transition: all 0.3s ease;
 
 		image {
 			width: 140upx;
 			height: 140upx;
+			border-radius: 16upx;
+			box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 		}
 	}
 </style>

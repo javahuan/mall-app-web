@@ -1033,7 +1033,7 @@
 		}
 	}
 
-	.detail-desc /deep/ img {
+	.detail-desc ::v-deep img {
 		width: 100%;
 		height: auto;
 	}
@@ -1270,9 +1270,8 @@
 			height: 76upx;
 			border-radius: 100px;
 			overflow: hidden;
-			box-shadow: 0 20upx 40upx -16upx #fa436a;
-			box-shadow: 1px 2px 5px rgba(219, 63, 96, 0.4);
-			background: linear-gradient(to right, #ffac30, #fa436a, #F56C6C);
+			box-shadow: 0 4upx 20upx rgba(99, 102, 241, 0.4);
+			background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
 			margin-left: 20upx;
 			position: relative;
 

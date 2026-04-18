@@ -181,7 +181,7 @@
 		data() {
 			return {
 				titleNViewBackground: '',
-				titleNViewBackgroundList: ['rgb(203, 87, 60)', 'rgb(205, 215, 218)'],
+				titleNViewBackgroundList: ['rgb(99, 102, 241)', 'rgb(139, 92, 246)', 'rgb(59, 130, 246)'],
 				swiperCurrent: 0,
 				swiperLength: 0,
 				carouselList: [],
@@ -401,7 +401,7 @@
 
 
 	page {
-		background: #f5f5f5;
+		background: #f5f7fa;
 	}
 
 	.m-t {
@@ -443,7 +443,8 @@
 		image {
 			width: 100%;
 			height: 100%;
-			border-radius: 10upx;
+			border-radius: 20upx;
+			box-shadow: 0 8upx 24upx rgba(0, 0, 0, 0.12);
 		}
 	}
 
@@ -486,6 +487,8 @@
 		flex-wrap: wrap;
 		padding: 30upx 22upx;
 		background: #fff;
+		border-radius: 24upx 24upx 0 0;
+		box-shadow: 0 -4upx 20upx rgba(99, 102, 241, 0.08);
 
 		.cate-item {
 			display: flex;
@@ -501,8 +504,9 @@
 			height: 88upx;
 			margin-bottom: 14upx;
 			border-radius: 50%;
-			opacity: .7;
-			box-shadow: 4upx 4upx 20upx rgba(250, 67, 106, 0.3);
+			opacity: .85;
+			box-shadow: 4upx 4upx 24upx rgba(99, 102, 241, 0.25);
+			transition: all 0.3s ease;
 		}
 	}
 
@@ -580,11 +584,13 @@
 			image {
 				width: 300upx;
 				height: 300upx;
-				border-radius: 6upx;
+				border-radius: 16upx;
+				box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 			}
 
 			.price {
 				color: $uni-color-primary;
+				font-weight: 600;
 			}
 		}
 
@@ -601,6 +607,9 @@
 		height: 140upx;
 		padding: 6upx 30upx 8upx;
 		background: #fff;
+		border-radius: 20upx;
+		margin: 16upx 30upx;
+		box-shadow: 0 2upx 12upx rgba(99, 102, 241, 0.08);
 
 		image {
 			flex-shrink: 0;
@@ -619,6 +628,7 @@
 			font-size: $font-lg +2upx;
 			color: #font-color-dark;
 			line-height: 1.3;
+			font-weight: 600;
 		}
 
 		.tit2 {
@@ -640,8 +650,9 @@
 			margin-right: 14upx;
 			font-size: $font-sm+2upx;
 			color: #fff;
-			border-radius: 2px;
-			background: rgba(0, 0, 0, .8);
+			border-radius: 8upx;
+			background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+			box-shadow: 0 2upx 8upx rgba(99, 102, 241, 0.3);
 		}
 	}
 
@@ -676,11 +687,11 @@
 			white-space: nowrap;
 			padding: 20upx;
 			padding-right: 50upx;
-			border-radius: 6upx;
+			border-radius: 16upx;
 			margin-top: -140upx;
 			margin-left: 30upx;
 			background: #fff;
-			box-shadow: 1px 1px 5px rgba(0, 0, 0, .2);
+			box-shadow: 0 4upx 16upx rgba(99, 102, 241, 0.12);
 			position: relative;
 			z-index: 1;
 		}
@@ -700,7 +711,8 @@
 			image {
 				width: 180upx;
 				height: 180upx;
-				border-radius: 6upx;
+				border-radius: 16upx;
+				box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 			}
 
 			.price {
@@ -716,8 +728,8 @@
 			flex-shrink: 0;
 			width: 180upx;
 			height: 180upx;
-			border-radius: 6upx;
-			background: #f3f3f3;
+			border-radius: 16upx;
+			background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
 			font-size: $font-base;
 			color: $font-color-light;
 
@@ -733,6 +745,9 @@
 		flex-wrap: wrap;
 		padding: 0 30upx;
 		background: #fff;
+		border-radius: 20upx;
+		margin: 0 30upx 16upx;
+		box-shadow: 0 2upx 12upx rgba(99, 102, 241, 0.06);
 
 		.guess-item {
 			display: flex;
@@ -748,8 +763,9 @@
 		.image-wrapper {
 			width: 100%;
 			height: 330upx;
-			border-radius: 3px;
+			border-radius: 16upx;
 			overflow: hidden;
+			box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 
 			image {
 				width: 100%;
@@ -761,8 +777,9 @@
 		.image-wrapper-brand {
 			width: 100%;
 			height: 150upx;
-			border-radius: 3px;
+			border-radius: 16upx;
 			overflow: hidden;
+			box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 		
 			image {
 				width: 100%;
@@ -775,6 +792,7 @@
 			font-size: $font-lg;
 			color: $font-color-dark;
 			line-height: 80upx;
+			font-weight: 500;
 		}
 
 		.title2 {
@@ -787,6 +805,7 @@
 			font-size: $font-lg;
 			color: $uni-color-primary;
 			line-height: 1;
+			font-weight: 600;
 		}
 	}
 
@@ -795,6 +814,9 @@
 		flex-wrap: wrap;
 		padding: 0 30upx;
 		background: #fff;
+		border-radius: 20upx;
+		margin: 0 30upx 16upx;
+		box-shadow: 0 2upx 12upx rgba(99, 102, 241, 0.06);
 
 		.guess-item {
 			display: flex;
@@ -806,8 +828,9 @@
 		.image-wrapper {
 			width: 30%;
 			height: 250upx;
-			border-radius: 3px;
+			border-radius: 16upx;
 			overflow: hidden;
+			box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 
 			image {
 				width: 100%;
@@ -820,6 +843,7 @@
 			font-size: $font-lg;
 			color: $font-color-dark;
 			line-height: 80upx;
+			font-weight: 500;
 		}
 
 		.title2 {
@@ -836,6 +860,7 @@
 			font-size: $font-lg;
 			color: $uni-color-primary;
 			line-height: 80upx;
+			font-weight: 600;
 		}
 
 		.txt {

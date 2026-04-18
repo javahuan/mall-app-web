@@ -266,11 +266,11 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "mall-app-web",
 		"navigationBarBackgroundColor": "#FFFFFF",
-		"backgroundColor": "#f8f8f8"
+		"backgroundColor": "#f5f7fa"
 	},
 	"tabBar": {
-		"color": "#C0C4CC",
-		"selectedColor": "#fa436a",
+		"color": "#94a3b8",
+		"selectedColor": "#6366f1",
 		"borderStyle": "black",
 		"backgroundColor": "#ffffff",
 		"list": [{

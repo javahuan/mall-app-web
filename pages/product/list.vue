@@ -362,7 +362,7 @@
 			height: 64upx;
 			color: #303133;
 			font-size: 30upx;
-			background: #f8f8f8;
+			background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
 		}
 
 		.active {
@@ -391,8 +391,9 @@
 		.image-wrapper {
 			width: 100%;
 			height: 330upx;
-			border-radius: 3px;
+			border-radius: 16upx;
 			overflow: hidden;
+			box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 
 			image {
 				width: 100%;

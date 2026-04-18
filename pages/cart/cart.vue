@@ -261,6 +261,10 @@
 		display: flex;
 		position: relative;
 		padding: 30upx 40upx;
+		background: #fff;
+		margin: 16upx 30upx;
+		border-radius: 20upx;
+		box-shadow: 0 2upx 12upx rgba(99, 102, 241, 0.06);
 
 		.image-wrapper {
 			width: 230upx;
@@ -269,7 +273,8 @@
 			position: relative;
 
 			image {
-				border-radius: 8upx;
+				border-radius: 16upx;
+				box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 			}
 		}
 
@@ -284,6 +289,7 @@
 			color: $font-color-disabled;
 			background: #fff;
 			border-radius: 50px;
+			box-shadow: 0 2upx 8upx rgba(0, 0, 0, 0.1);
 		}
 
 		.item-right {
@@ -300,6 +306,7 @@
 				color: $font-color-dark;
 				height: 40upx;
 				line-height: 40upx;
+				font-weight: 500;
 			}
 
 			.attr {
@@ -337,9 +344,10 @@
 		width: 690upx;
 		height: 100upx;
 		padding: 0 30upx;
-		background: rgba(255, 255, 255, .9);
-		box-shadow: 0 0 20upx 0 rgba(0, 0, 0, .5);
-		border-radius: 16upx;
+		background: rgba(255, 255, 255, .95);
+		box-shadow: 0 4upx 24upx rgba(99, 102, 241, 0.15);
+		border-radius: 24upx;
+		backdrop-filter: blur(10px);
 
 		.checkbox {
 			height: 52upx;
@@ -385,6 +393,7 @@
 			.price {
 				font-size: $font-lg;
 				color: $font-color-dark;
+				font-weight: 600;
 			}
 
 			.coupon {
@@ -404,8 +413,9 @@
 			height: 76upx;
 			line-height: 76upx;
 			font-size: $font-base + 2upx;
-			background: $uni-color-primary;
-			box-shadow: 1px 2px 5px rgba(217, 60, 93, 0.72)
+			background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+			box-shadow: 0 4upx 16upx rgba(99, 102, 241, 0.4);
+			font-weight: 500;
 		}
 	}
 

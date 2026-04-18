@@ -366,16 +366,16 @@
 	}
 	/* 骨架屏替代方案 */
 	.Skeleton {
-		background: #f3f3f3;
+		background: #f1f5f9;
 		padding: 20upx 0;
-		border-radius: 8upx;
+		border-radius: 16upx;
 	}
 
 	/* 图片载入替代方案 */
 	.image-wrapper {
 		font-size: 0;
-		background: #f3f3f3;
-		border-radius: 4px;
+		background: #f1f5f9;
+		border-radius: 16upx;
 
 		image {
 			width: 100%;
@@ -397,7 +397,7 @@
 	}
 
 	.common-hover {
-		background: #f5f5f5;
+		background: linear-gradient(135deg, rgba(99, 102, 241, 0.08) 0%, rgba(139, 92, 246, 0.05) 100%);
 	}
 
 	/*边框*/

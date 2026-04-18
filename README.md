@@ -1,15 +1,10 @@
-# mall-app-web
-<p>
-  <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%85%AC%E4%BC%97%E5%8F%B7-macrozheng-blue.svg" alt="公众号"></a>
-  <a href="#公众号"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E4%BA%A4%E6%B5%81-%E5%BE%AE%E4%BF%A1%E7%BE%A4-2BA245.svg" alt="交流"></a>
-  <a href="https://github.com/macrozheng/mall"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%90%8E%E5%8F%B0%E9%A1%B9%E7%9B%AE-mall-blue.svg" alt="后台项目"></a>
-  <a href="https://github.com/macrozheng/mall-admin-web"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE-mall--admin--web-green.svg" alt="前端项目"></a>
-  <a href="https://gitee.com/macrozheng/mall-app-web"><img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/badge/%E7%A0%81%E4%BA%91-%E9%A1%B9%E7%9B%AE%E5%9C%B0%E5%9D%80-orange.svg" alt="码云"></a>
-</p>
+# mall-app-web<p>
+
+</a>
 
 ## 前言
 
-该项目为前后端分离项目的前端部分，后端项目`mall`地址：[传送门](https://github.com/macrozheng/mall)。
+该项目为前后端分离项目的前端部分
 
 ## 项目介绍
 
@@ -17,7 +12,7 @@
 
 ### 项目演示
 
-项目在线演示地址：[https://www.macrozheng.com/app/](https://www.macrozheng.com/app/)  
+项目在线演示地址：[https://www.macrozheng.com/app/](https://www.macrozheng.com/app/)
 
 ### 效果展示
 
@@ -31,9 +26,8 @@
 
 ![](http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/project/mall_app_web_preview_09.png)![](http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/project/mall_app_web_preview_10.png)
 
-
-
 ### 技术选型
+
 
 | 技术         | 说明             | 官网                                    |
 | ------------ | ---------------- | --------------------------------------- |
@@ -45,7 +39,7 @@
 
 ### 项目结构
 
-``` lua
+```lua
 src -- 源码目录
 ├── api -- luch-request网络请求定义
 ├── components -- 通用组件封装
@@ -79,17 +73,3 @@ src -- 源码目录
 - 克隆源代码到本地，使用`HBuilder X`打开；
 - 在`HBuilder X`中使用`运行->运行到浏览器->Chrome`运行项目，运行成功后会自动打开下面地址（将浏览器改为手机模式）：http://localhost:8060
 - 如果浏览器没有启动的话，可以直接访问如下地址访问：http://localhost:8060
-
-## 公众号
-
-学习不走弯路，关注公众号「**macrozheng**」，回复「**学习路线**」，获取mall项目专属学习路线！
-
-加微信群交流，公众号后台回复「**加群**」即可。
-
-![公众号图片](http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg)
-
-## 许可证
-
-[Apache License 2.0](https://github.com/macrozheng/mall-app-web/blob/master/LICENSE)
-
-Copyright (c) 2020-2024 macrozheng

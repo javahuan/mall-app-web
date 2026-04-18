@@ -209,7 +209,8 @@
 	  justify-content: space-around;
 	  align-content: center;
 	  background: #fff;
-	  border-radius: 10upx;
+	  border-radius: 20upx;
+	  box-shadow: 0 2upx 12upx rgba(99, 102, 241, 0.06);
 	}
 
 	.user-section{
@@ -250,11 +251,12 @@
 		flex-direction: column;
 		color: #f7d680;
 		height: 240upx;
-		background: linear-gradient(left, rgba(0,0,0,.7), rgba(0,0,0,.8));
-		border-radius: 16upx 16upx 0 0;
+		background: linear-gradient(135deg, rgba(99, 102, 241, 0.9) 0%, rgba(139, 92, 246, 0.95) 100%);
+		border-radius: 24upx 24upx 0 0;
 		overflow: hidden;
 		position: relative;
 		padding: 20upx 24upx;
+		box-shadow: 0 8upx 24upx rgba(99, 102, 241, 0.3);
 		.card-bg{
 			position:absolute;
 			top: 20upx;
@@ -275,11 +277,13 @@
 			border-radius: 20px;
 			background: linear-gradient(left, #f9e6af, #ffd465);
 			z-index: 1;
+			box-shadow: 0 2upx 8upx rgba(255, 212, 101, 0.4);
 		}
 		.tit{
 			font-size: $font-base+2upx;
 			color: #f7d680;
 			margin-bottom: 28upx;
+			font-weight: 600;
 			.yticon{
 				color: #f6e5a3;
 				margin-right: 16upx;
@@ -296,7 +300,7 @@
 		margin-top: -150upx;
 		padding: 0 30upx;
 		position:relative;
-		background: #f5f5f5;
+		background: #f5f7fa;
 		padding-bottom: 20upx;
 		.arc{
 			position:absolute;
@@ -317,8 +321,9 @@
 		}
 		.num{
 			font-size: $font-lg;
-			color: $font-color-dark;
+			color: $base-color;
 			margin-bottom: 8upx;
+			font-weight: 600;
 		}
 	}
 	.order-section{
@@ -329,14 +334,15 @@
 			@extend %flex-center;
 			width: 120upx;
 			height: 120upx;
-			border-radius: 10upx;
+			border-radius: 16upx;
 			font-size: $font-sm;
 			color: $font-color-dark;
+			transition: all 0.3s ease;
 		}
 		.yticon{
 			font-size: 48upx;
 			margin-bottom: 18upx;
-			color: #fa436a;
+			color: $base-color;
 		}
 		.icon-shouhoutuikuan{
 			font-size:44upx;
@@ -346,7 +352,8 @@
 		padding: 30upx 0 0;
 		margin-top: 20upx;
 		background: #fff;
-		border-radius:10upx;
+		border-radius:20upx;
+		box-shadow: 0 2upx 12upx rgba(99, 102, 241, 0.06);
 		.sec-header{
 			display:flex;
 			align-items: center;
@@ -369,7 +376,8 @@
 				width: 160upx;
 				height: 160upx;
 				margin-right: 20upx;
-				border-radius: 10upx;
+				border-radius: 16upx;
+				box-shadow: 0 4upx 12upx rgba(0, 0, 0, 0.08);
 			}
 		}
 	}
