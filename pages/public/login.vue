@@ -21,8 +21,7 @@
 				</view>
 			</view>
 			<button class="confirm-btn" @click="toLogin" :disabled="logining">登录</button>
-			<button class="confirm-btn2" @click="toRegist" >获取体验账号</button>
-			<view class="forget-section" @click="toRegist">
+			<view class="forget-section" @click="toForgetPassword">
 				忘记密码?
 			</view>
 		</view>
@@ -38,8 +37,9 @@
 		mapMutations
 	} from 'vuex';
 	import {
-		memberLogin,memberInfo
-	} from '@/api/member.js';
+		login
+	} from '@/api/login.js';
+	import {memberInfo} from '@/api/member.js';
 	export default {
 		data() {
 			return {
@@ -60,9 +60,12 @@
 			toRegist() {
 				uni.navigateTo({url:'/pages/public/register'});
 			},
+			toForgetPassword() {
+				uni.navigateTo({url:'/pages/public/forgetPassword'});
+			},
 			async toLogin() {
 				this.logining = true;
-				memberLogin({
+				login({
 					username: this.username,
 					password: this.password
 				}).then(response => {

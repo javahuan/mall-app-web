@@ -5,15 +5,11 @@
 		<view class="right-top-sign"></view>
 		<!-- 设置白色背景防止软键盘把下部绝对定位元素顶上来盖住输入框等 -->
 		<view class="wrapper">
-			<view class="left-top-sign">REGISTER</view>
+			<view class="left-top-sign">RESET</view>
 			<view class="welcome">
-				欢迎加入！
+				重置密码
 			</view>
 			<view class="input-content">
-				<view class="input-item">
-					<text class="tit">用户名</text>
-					<input type="text" v-model="username" placeholder="请输入用户名" maxlength="20"/>
-				</view>
 				<view class="input-item">
 					<text class="tit">手机号</text>
 					<input type="number" v-model="telephone" placeholder="请输入手机号" maxlength="11"/>
@@ -28,17 +24,17 @@
 					</view>
 				</view>
 				<view class="input-item">
-					<text class="tit">密码</text>
-					<input type="password" v-model="password" placeholder="8-18位数字、字母组合" placeholder-class="input-empty" maxlength="18"/>
+					<text class="tit">新密码</text>
+					<input type="password" v-model="newPassword" placeholder="8-18位数字、字母组合" placeholder-class="input-empty" maxlength="18"/>
 				</view>
 				<view class="input-item">
-					<text class="tit">确认密码</text>
-					<input type="password" v-model="confirmPassword" placeholder="请再次输入密码" placeholder-class="input-empty" maxlength="18"/>
+					<text class="tit">确认新密码</text>
+					<input type="password" v-model="confirmPassword" placeholder="请再次输入新密码" placeholder-class="input-empty" maxlength="18"/>
 				</view>
 			</view>
-			<button class="confirm-btn" @click="toRegister" :disabled="registering">注册</button>
+			<button class="confirm-btn" @click="toResetPassword" :disabled="reseting">重置密码</button>
 			<view class="login-section">
-				已有账号?
+				想起密码了?
 				<text @click="toLogin">立即登录</text>
 			</view>
 		</view>
@@ -46,17 +42,16 @@
 </template>
 
 <script>
-	import { register, getAuthCode } from '@/api/login.js';
+	import { updatePassword, getAuthCode } from '@/api/login.js';
 	
 	export default {
 		data() {
 			return {
-				username: '',
 				telephone: '',
 				authCode: '',
-				password: '',
+				newPassword: '',
 				confirmPassword: '',
-				registering: false,
+				reseting: false,
 				countdown: 0,
 				timer: null
 			}
@@ -107,16 +102,8 @@
 					});
 				});
 			},
-			toRegister() {
+			toResetPassword() {
 				// 表单验证
-				if (!this.username || this.username.trim() === '') {
-					uni.showToast({
-						title: '请输入用户名',
-						icon: 'none'
-					});
-					return;
-				}
-				
 				if (!this.telephone || this.telephone.length !== 11) {
 					uni.showToast({
 						title: '请输入正确的手机号',
@@ -133,7 +120,7 @@
 					return;
 				}
 				
-				if (!this.password || this.password.length < 8) {
+				if (!this.newPassword || this.newPassword.length < 8) {
 					uni.showToast({
 						title: '密码长度不能少于8位',
 						icon: 'none'
@@ -141,7 +128,7 @@
 					return;
 				}
 				
-				if (this.password !== this.confirmPassword) {
+				if (this.newPassword !== this.confirmPassword) {
 					uni.showToast({
 						title: '两次输入的密码不一致',
 						icon: 'none'
@@ -149,25 +136,24 @@
 					return;
 				}
 				
-				this.registering = true;
+				this.reseting = true;
 				
-				// 调用注册接口
-				register({
-					username: this.username,
-					password: this.password,
+				// 调用重置密码接口
+				updatePassword({
 					telephone: this.telephone,
+					password: this.newPassword,
 					authCode: this.authCode
 				}).then(response => {
 					uni.showToast({
-						title: '注册成功',
+						title: '密码重置成功',
 						icon: 'success'
 					});
 					setTimeout(() => {
 						uni.redirectTo({url:'/pages/public/login'});
 					}, 1500);
 				}).catch(err => {
-					console.error('注册失败:', err);
-					this.registering = false;
+					console.error('重置密码失败:', err);
+					this.reseting = false;
 				});
 			},
 		},
@@ -179,7 +165,88 @@
 	page {
 		background: #fff;
 	}
-	
+
+	.container {
+		padding-top: 115px;
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+		background: #fff;
+	}
+
+	.wrapper {
+		position: relative;
+		z-index: 90;
+		background: #fff;
+		padding-bottom: 40upx;
+	}
+
+	.back-btn {
+		position: absolute;
+		left: 40upx;
+		z-index: 9999;
+		padding-top: var(--status-bar-height);
+		top: 40upx;
+		font-size: 40upx;
+		color: $font-color-dark;
+	}
+
+	.left-top-sign {
+		font-size: 120upx;
+		color: $page-color-base;
+		position: relative;
+		left: -16upx;
+	}
+
+	.right-top-sign {
+		position: absolute;
+		top: 80upx;
+		right: -30upx;
+		z-index: 95;
+
+		&:before,
+		&:after {
+			display: block;
+			content: "";
+			width: 400upx;
+			height: 80upx;
+			background: #b4f3e2;
+		}
+
+		&:before {
+			transform: rotate(50deg);
+			border-radius: 0 50px 0 0;
+		}
+
+		&:after {
+			position: absolute;
+			right: -198upx;
+			top: 0;
+			transform: rotate(-50deg);
+			border-radius: 50px 0 0 0;
+			/* background: pink; */
+		}
+	}
+
+	.left-bottom-sign {
+		position: absolute;
+		left: -270upx;
+		bottom: -320upx;
+		border: 100upx solid #d0d1fd;
+		border-radius: 50%;
+		padding: 180upx;
+	}
+
+	.welcome {
+		position: relative;
+		left: 50upx;
+		top: -90upx;
+		font-size: 46upx;
+		color: #555;
+		text-shadow: 1px 0px 1px rgba(0, 0, 0, .3);
+	}
+
 	.input-content {
 		padding: 0 60upx;
 		margin-top: 40upx;
@@ -278,77 +345,5 @@
 			color: $font-color-spec;
 			margin-left: 10upx;
 		}
-	}
-
-	.container {
-		padding-top: 115px;
-		position: relative;
-		width: 100vw;
-		height: 100vh;
-		overflow: hidden;
-		background: #fff;
-	}
-
-	.wrapper {
-		position: relative;
-		z-index: 90;
-		background: #fff;
-		padding-bottom: 40upx;
-	}
-
-	.back-btn {
-		position: absolute;
-		left: 40upx;
-		z-index: 9999;
-		padding-top: var(--status-bar-height);
-		top: 40upx;
-		font-size: 40upx;
-		color: $font-color-dark;
-	}
-
-	.left-top-sign {
-		font-size: 120upx;
-		color: $page-color-base;
-		position: relative;
-		left: -16upx;
-	}
-
-	.right-top-sign {
-		position: absolute;
-		top: 80upx;
-		right: -30upx;
-		z-index: 95;
-
-		&:before,
-		&:after {
-			display: block;
-			content: "";
-			width: 400upx;
-			height: 80upx;
-			background: #b4f3e2;
-		}
-
-		&:before {
-			transform: rotate(50deg);
-			border-radius: 0 50px 0 0;
-		}
-
-		&:after {
-			position: absolute;
-			right: -198upx;
-			top: 0;
-			transform: rotate(-50deg);
-			border-radius: 50px 0 0 0;
-			/* background: pink; */
-		}
-	}
-
-	.left-bottom-sign {
-		position: absolute;
-		left: -270upx;
-		bottom: -320upx;
-		border: 100upx solid #d0d1fd;
-		border-radius: 50%;
-		padding: 180upx;
 	}
 </style>
